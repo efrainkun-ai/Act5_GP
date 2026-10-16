@@ -1,0 +1,41 @@
+{
+  "resultado": "VALIDACION_CORRECTA",
+  "fecha_utc": "2026-10-16T02:48:22.652142+00:00",
+  "experiment_name": "Act5_GP_Configuracion",
+  "experiment_id": "1",
+  "run_id": "3ee54eddf679434480ac07941f52f15d",
+  "estado": "FINISHED",
+  "parametros": {
+    "proyecto": "AI-SupportAssist",
+    "repositorio": "Act5_GP",
+    "etapa": "2_configuracion_mlflow",
+    "semilla": "42",
+    "tipo_prueba": "infraestructura_sin_entrenamiento"
+  },
+  "metricas": {
+    "valor_prueba": 1.0,
+    "artefactos_esperados": 2.0
+  },
+  "artefactos_sha256": {
+    "verificacion.txt": "69f60dc999a6a317493c6af88e46e184c7f9a608adac553530dc0af758f3cfb6",
+    "entorno.json": "41d2e9dce458ab943b91711e0d9824ea47deeb1c2bc2bb6b3875597c2777c9d8"
+  },
+  "controles": {
+    "estado_finished": true,
+    "parametros_recuperados": true,
+    "metricas_recuperadas": true,
+    "artefactos_listados": true,
+    "contenido_verificacion.txt": true,
+    "contenido_entorno.json": true
+  },
+  "entorno": {
+    "python": "3.12.14",
+    "mlflow": "3.5.0",
+    "sqlalchemy": "2.0.43",
+    "backend": "SQLite local",
+    "alcance": "Verificación técnica; no se evalúa ningún modelo."
+  },
+  "fuente_sha256": "86e00ef8953f1504460a6b45cecc94a0bcce007a1fd65621caf31be29c3f7622",
+  "git_commit_base": "d9f0e2a41138680c8583dc47e737f9718997e031",
+  "nota": "Prueba local de infraestructura. Sin entrenamiento ni métricas predictivas."
+}

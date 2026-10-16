@@ -1,0 +1,4 @@
+# Dependencias del paso 2. Las bibliotecas de modelado se definirán después.
+mlflow==3.5.0
+SQLAlchemy==2.0.43
+packaging==25.0
