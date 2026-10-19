@@ -1,0 +1,10 @@
+{
+  "comparison": "MultinomialNB menos LinearSVC",
+  "accuracy_difference": -0.0027066416822819073,
+  "bootstrap_95_low": -0.005205080158234437,
+  "bootstrap_95_high": 0.0,
+  "only_first_correct": 16,
+  "only_second_correct": 29,
+  "mcnemar_exact_p": 0.07245426016254441,
+  "interpretation": "Exploratorio; datos sintéticos, posible dependencia entre paráfrasis."
+}

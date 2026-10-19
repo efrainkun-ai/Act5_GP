@@ -1,0 +1,83 @@
+{
+  "recommended_model": "LinearSVC",
+  "quality": {
+    "raw_rows": 26872,
+    "clean_rows": 24014,
+    "excluded_rows": 2858,
+    "exclusion_reasons": {
+      "conservado": 24014,
+      "texto_duplicado": 2858
+    },
+    "intents": 27,
+    "categories": 11,
+    "missing_raw": {
+      "flags": 0,
+      "instruction": 0,
+      "category": 0,
+      "intent": 0,
+      "response": 0
+    },
+    "empty_raw": {
+      "flags": 0,
+      "instruction": 0,
+      "category": 0,
+      "intent": 0,
+      "response": 0
+    },
+    "conflicting_texts": 0
+  },
+  "statistics": {
+    "comparison": "MultinomialNB menos LinearSVC",
+    "accuracy_difference": -0.0027066416822819073,
+    "bootstrap_95_low": -0.005205080158234437,
+    "bootstrap_95_high": 0.0,
+    "only_first_correct": 16,
+    "only_second_correct": 29,
+    "mcnemar_exact_p": 0.07245426016254441,
+    "interpretation": "Exploratorio; datos sintéticos, posible dependencia entre paráfrasis."
+  },
+  "models": [
+    {
+      "model": "MultinomialNB",
+      "cv_f1_mean": 0.9888799820105465,
+      "cv_f1_std": 0.0018816745505012122,
+      "test_accuracy": 0.9904226525088486,
+      "test_precision_macro": 0.9904028522046525,
+      "test_recall_macro": 0.9893494916724335,
+      "test_f1_macro": 0.9898019233019141,
+      "test_roc_auc_macro_ovr": 0.9999879895544493,
+      "train_f1_macro": 0.9944918434156038,
+      "search_seconds": 9.216192470000351,
+      "latency_p50_ms": 0.3041294999093225,
+      "latency_p95_ms": 0.44840959999419266,
+      "run_id": "be92b6e307e24f70833d9eb1457a64b8",
+      "best_params": "{'clf__alpha': 0.1, 'tfidf__ngram_range': (1, 2)}",
+      "model_uri": "models:/m-11f2fa9f70fe4d6db1aae20041445224",
+      "model_bytes": 2343129
+    },
+    {
+      "model": "LinearSVC",
+      "cv_f1_mean": 0.9918713848460128,
+      "cv_f1_std": 0.0012641579168267678,
+      "test_accuracy": 0.9931292941911305,
+      "test_precision_macro": 0.993350735796132,
+      "test_recall_macro": 0.9921368884126693,
+      "test_f1_macro": 0.9926775523709807,
+      "test_roc_auc_macro_ovr": 0.9999813233844761,
+      "train_f1_macro": 0.998305769306909,
+      "search_seconds": 20.748571405999428,
+      "latency_p50_ms": 0.2179070002057415,
+      "latency_p95_ms": 0.3435561998685443,
+      "run_id": "611908d7a35c4d3395791f779b166fa1",
+      "best_params": "{'clf__C': 1.0, 'tfidf__ngram_range': (1, 2)}",
+      "model_uri": "models:/m-672aac71c1474c8bab6f9affe96c912b",
+      "model_bytes": 1272160
+    }
+  ],
+  "baseline": {
+    "accuracy": 0.04143243805954612,
+    "precision_macro": 0.0015345347429461527,
+    "recall_macro": 0.037037037037037035,
+    "f1_macro": 0.0029469693604039864
+  }
+}

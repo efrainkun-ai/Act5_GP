@@ -1,3 +1,12 @@
+# Historial de cambios
+
+## 0.6.0 Integración de recomendaciones y APA 7
+
+- Programa v3 completo y verificado en `Actividad5/`.
+- Reporte Word actualizado y referencias APA 7.
+- Lote 20261019T051743_4b3d97f7 con 15 runs y commit de código 8eee1626fc0c40ae2efcbc16130e24ed0e589648.
+- Código, preparación y evidencia publicados; las etapas anteriores se conservan como historial.
+
 # Historial de cambios y reporte de la actividad
 
 ## 0.5.0 Reporte técnico en PDF

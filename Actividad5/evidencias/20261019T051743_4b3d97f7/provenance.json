@@ -1,0 +1,26 @@
+{
+  "git_commit_observado": "8eee1626fc0c40ae2efcbc16130e24ed0e589648",
+  "batch_id": "20261019T051743_4b3d97f7",
+  "manifest": {
+    "dataset": "bitext/Bitext-customer-support-llm-chatbot-training-dataset",
+    "revision": "430d1a89bd93bd1fa23c16f29dd53e73f0087443",
+    "license": "cdla-sharing-1.0",
+    "raw_sha256": "6f81102b0100b97b8468eb04368033a23206bf1fde9d53500d5806ec1001a434",
+    "processed_sha256": "bf4da7cdace69cfa7ffb3a4c138ea98f215baf42a9728f4123152c6d30c41789",
+    "split_sha256": "bc9bce39ee2e08d2d734c6d6d092ebe668e3b1bb97933f39101684bb07432383",
+    "folds_sha256": "92a3a225ba97c910db72381016d4e1a13b3b2a6ba807ee7f1eed42f04fb203ac",
+    "cleaning_code_sha256": "b56cf691f01b68e931788137f3d283b20ef4b48ed9f2cbdde11d56586a3e8a6e",
+    "seed": 42,
+    "test_size": 0.2,
+    "cleaning_version": "v1",
+    "target": "intent_clean",
+    "predictor": "text_clean",
+    "train_rows": 19211,
+    "test_rows": 4803,
+    "folds": 5,
+    "git_commit": "8eee1626fc0c40ae2efcbc16130e24ed0e589648",
+    "commit_url": "https://github.com/efrainkun-ai/Act5_GP/commit/8eee1626fc0c40ae2efcbc16130e24ed0e589648",
+    "train_code_sha256": "3c877eced84d25a9e8c407cd2f8ab4d05bbc81a86866c71b92c3762c5efa2f64"
+  },
+  "source_verified": true
+}

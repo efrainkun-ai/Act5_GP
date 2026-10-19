@@ -1,0 +1,26 @@
+{
+  "raw_rows": 26872,
+  "clean_rows": 24014,
+  "excluded_rows": 2858,
+  "exclusion_reasons": {
+    "conservado": 24014,
+    "texto_duplicado": 2858
+  },
+  "intents": 27,
+  "categories": 11,
+  "missing_raw": {
+    "flags": 0,
+    "instruction": 0,
+    "category": 0,
+    "intent": 0,
+    "response": 0
+  },
+  "empty_raw": {
+    "flags": 0,
+    "instruction": 0,
+    "category": 0,
+    "intent": 0,
+    "response": 0
+  },
+  "conflicting_texts": 0
+}

@@ -1,0 +1,12 @@
+{
+  "model": "LinearSVC",
+  "clf__C": 1.0,
+  "tfidf__ngram_range": [
+    1,
+    2
+  ],
+  "cv_f1_macro": 0.9918713848460128,
+  "cv_f1_std": 0.0012641579168267678,
+  "best_index": 3,
+  "git_commit": "8eee1626fc0c40ae2efcbc16130e24ed0e589648"
+}

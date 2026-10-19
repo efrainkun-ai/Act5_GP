@@ -1,5 +1,15 @@
 # Act5_GP
 
+## Entrega vigente: Actividad5, versión 3
+
+[Notebook actualizado y ejecutado](Actividad5/fuentes/entrena.ipynb) · [Reporte Word](Actividad5/informes/Actividad_5_ECM_GP_Completa.docx) · [Guía de reproducción](Actividad5/README.md) · [Referencias APA 7](Actividad5/REFERENCIAS.md).
+
+La versión vigente está en `Actividad5/`. Incorpora ganadores de Grid Search, commit verificado y las evidencias del lote `20261019T051743_4b3d97f7`. Los archivos anteriores de la raíz se conservan como historial del desarrollo; para esta entrega utiliza las instrucciones de `Actividad5/README.md`.
+
+---
+
+## Historial de las etapas iniciales
+
 Actividad 5 de Gestión de proyectos de inteligencia artificial. El proyecto da continuidad a AI-SupportAssist de NovaMarket mediante un prototipo de clasificación de solicitudes de soporte.
 
 ## Estado de avance

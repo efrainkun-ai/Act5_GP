@@ -1,0 +1,3 @@
+# Conclusión experimental
+
+El modelo seleccionado por validación cruzada fue LinearSVC, con F1 macro promedio 0.9919 y desviación estándar 0.0013. En el conjunto de prueba obtuvo F1 macro 0.9927 y exactitud 0.9931. La preparación conservó 24,014 solicitudes de 26,872 originales. La prueba exploratoria de McNemar obtuvo p=0.0725; no se detectó una diferencia de exactitud concluyente al nivel del 5 %. La recomendación se limita al prototipo de intenciones en inglés. No demuestra la meta de enrutamiento de NovaMarket ni los ahorros financieros de fase 1. Se requiere validación externa en español, revisión por intención y controles de datos personales antes de considerar su operación.

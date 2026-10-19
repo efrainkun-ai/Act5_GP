@@ -1,0 +1,12 @@
+{
+  "model": "MultinomialNB",
+  "clf__alpha": 0.1,
+  "tfidf__ngram_range": [
+    1,
+    2
+  ],
+  "cv_f1_macro": 0.9888799820105465,
+  "cv_f1_std": 0.0018816745505012122,
+  "best_index": 1,
+  "git_commit": "8eee1626fc0c40ae2efcbc16130e24ed0e589648"
+}

@@ -1,0 +1,3 @@
+model,clf__alpha,tfidf__ngram_range,cv_f1_macro,cv_f1_std,best_index,git_commit,clf__C
+MultinomialNB,0.1,"[1, 2]",0.9888799820105465,0.0018816745505012122,1,8eee1626fc0c40ae2efcbc16130e24ed0e589648,
+LinearSVC,,"[1, 2]",0.9918713848460128,0.0012641579168267678,3,8eee1626fc0c40ae2efcbc16130e24ed0e589648,1.0

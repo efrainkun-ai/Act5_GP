@@ -1,0 +1,136 @@
+{
+  "batch_id": "20261019T051743_4b3d97f7",
+  "experiment_id": "2",
+  "training_runs": 15,
+  "git_commit": "8eee1626fc0c40ae2efcbc16130e24ed0e589648",
+  "commit_url": "https://github.com/efrainkun-ai/Act5_GP/commit/8eee1626fc0c40ae2efcbc16130e24ed0e589648",
+  "code_verified": true,
+  "configuration_run": "89438074997444f78e4f92929ec4723b",
+  "models": [
+    {
+      "model": "MultinomialNB",
+      "run_id": "be92b6e307e24f70833d9eb1457a64b8",
+      "model_uri": "models:/m-11f2fa9f70fe4d6db1aae20041445224",
+      "status": "FINISHED",
+      "params": {
+        "seed": "42",
+        "folds": "5",
+        "selection_metric": "f1_macro",
+        "dataset_sha256": "bf4da7cdace69cfa7ffb3a4c138ea98f215baf42a9728f4123152c6d30c41789",
+        "split_sha256": "bc9bce39ee2e08d2d734c6d6d092ebe668e3b1bb97933f39101684bb07432383",
+        "folds_sha256": "92a3a225ba97c910db72381016d4e1a13b3b2a6ba807ee7f1eed42f04fb203ac",
+        "train_rows": "19211",
+        "test_rows": "4803",
+        "max_features": "20000",
+        "min_df": "2",
+        "best_clf__alpha": "0.1",
+        "best_tfidf__ngram_range": "(1, 2)"
+      },
+      "metrics": {
+        "cv_f1_mean": 0.9888799820105465,
+        "cv_f1_std": 0.0018816745505012122,
+        "test_accuracy": 0.9904226525088486,
+        "test_precision_macro": 0.9904028522046525,
+        "test_recall_macro": 0.9893494916724335,
+        "test_f1_macro": 0.9898019233019141,
+        "test_roc_auc_macro_ovr": 0.9999879895544493,
+        "train_f1_macro": 0.9944918434156038,
+        "search_seconds": 9.216192470000351,
+        "latency_p50_ms": 0.3041294999093225,
+        "latency_p95_ms": 0.44840959999419266,
+        "model_bytes": 2343129.0
+      },
+      "artifacts": [
+        "MultinomialNB_auc_por_clase.csv",
+        "MultinomialNB_classification_report.csv",
+        "MultinomialNB_grid.csv",
+        "best_params.json",
+        "codigo_versionado.json",
+        "dataset_manifest.json",
+        "environment.json",
+        "fuentes",
+        "quality.json",
+        "quality.png"
+      ],
+      "downloaded_grid_sha256": "4c3aa5b263b3142cb651b79d645dfba1657374730236f0c6e9a6060cdd2b6c17",
+      "mlflow_predictions_equal": true,
+      "joblib_predictions_equal": true
+    },
+    {
+      "model": "LinearSVC",
+      "run_id": "611908d7a35c4d3395791f779b166fa1",
+      "model_uri": "models:/m-672aac71c1474c8bab6f9affe96c912b",
+      "status": "FINISHED",
+      "params": {
+        "seed": "42",
+        "folds": "5",
+        "selection_metric": "f1_macro",
+        "dataset_sha256": "bf4da7cdace69cfa7ffb3a4c138ea98f215baf42a9728f4123152c6d30c41789",
+        "split_sha256": "bc9bce39ee2e08d2d734c6d6d092ebe668e3b1bb97933f39101684bb07432383",
+        "folds_sha256": "92a3a225ba97c910db72381016d4e1a13b3b2a6ba807ee7f1eed42f04fb203ac",
+        "train_rows": "19211",
+        "test_rows": "4803",
+        "max_features": "20000",
+        "min_df": "2",
+        "best_clf__C": "1.0",
+        "best_tfidf__ngram_range": "(1, 2)"
+      },
+      "metrics": {
+        "cv_f1_mean": 0.9918713848460128,
+        "cv_f1_std": 0.0012641579168267678,
+        "test_accuracy": 0.9931292941911305,
+        "test_precision_macro": 0.993350735796132,
+        "test_recall_macro": 0.9921368884126693,
+        "test_f1_macro": 0.9926775523709807,
+        "test_roc_auc_macro_ovr": 0.9999813233844761,
+        "train_f1_macro": 0.998305769306909,
+        "search_seconds": 20.748571405999428,
+        "latency_p50_ms": 0.2179070002057415,
+        "latency_p95_ms": 0.3435561998685443,
+        "model_bytes": 1272160.0
+      },
+      "artifacts": [
+        "LinearSVC_auc_por_clase.csv",
+        "LinearSVC_classification_report.csv",
+        "LinearSVC_grid.csv",
+        "best_params.json",
+        "codigo_versionado.json",
+        "dataset_manifest.json",
+        "environment.json",
+        "fuentes",
+        "quality.json",
+        "quality.png"
+      ],
+      "downloaded_grid_sha256": "6803b3f9ff7ffb278d785ab50d76c5a28e8133605e22bbcc35ef44463002695b",
+      "mlflow_predictions_equal": true,
+      "joblib_predictions_equal": true
+    }
+  ],
+  "all_runs_finished": true,
+  "best_hyperparameters": [
+    {
+      "model": "MultinomialNB",
+      "clf__alpha": 0.1,
+      "tfidf__ngram_range": [
+        1,
+        2
+      ],
+      "cv_f1_macro": 0.9888799820105465,
+      "cv_f1_std": 0.0018816745505012122,
+      "best_index": 1,
+      "git_commit": "8eee1626fc0c40ae2efcbc16130e24ed0e589648"
+    },
+    {
+      "model": "LinearSVC",
+      "clf__C": 1.0,
+      "tfidf__ngram_range": [
+        1,
+        2
+      ],
+      "cv_f1_macro": 0.9918713848460128,
+      "cv_f1_std": 0.0012641579168267678,
+      "best_index": 3,
+      "git_commit": "8eee1626fc0c40ae2efcbc16130e24ed0e589648"
+    }
+  ]
+}

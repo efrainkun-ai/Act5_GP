@@ -1,0 +1,63 @@
+source_row,text_clean,intent_clean,category,prediction_MultinomialNB,prediction_LinearSVC
+4892,i'm trying to fgind my bills from entity,check_invoice,INVOICE,get_invoice,get_invoice
+16083,refunding entity dollars,get_refund,REFUND,track_refund,get_refund
+13883,could you tell me about shipping periods?,delivery_period,DELIVERY,change_shipping_address,delivery_period
+19186,order anitem,place_order,ORDER,change_order,place_order
+15729,gedtting bill from entity,get_invoice,INVOICE,check_invoice,check_invoice
+511,problems with cnceling purchase entity,cancel_order,ORDER,cancel_order,change_order
+4431,need to chek my bill #85632 how to do it,check_invoice,INVOICE,get_invoice,check_invoice
+21376,need help to report problems with a registratoon,registration_problems,ACCOUNT,payment_issue,payment_issue
+24415,would it be possible to sitch to the bloody entity account,switch_account,ACCOUNT,delete_account,switch_account
+21212,can i inform of rwgistration errors,registration_problems,ACCOUNT,registration_problems,payment_issue
+47,cance order entity,cancel_order,ORDER,change_order,change_order
+1207,update purchase00123842,change_order,ORDER,change_shipping_address,edit_account
+14543,what do i have to do to edit my goddamn profile,edit_account,ACCOUNT,change_shipping_address,edit_account
+12976,can you give me information about delivery periods?,delivery_period,DELIVERY,change_shipping_address,delivery_period
+19373,make order,place_order,ORDER,place_order,complaint
+16343,i need help to requestreimbursements,get_refund,REFUND,place_order,place_order
+6237,i need help to se how long the bloody reimbursements take,check_refund_policy,REFUND,delivery_period,check_refund_policy
+4010,need help lpocating the bloody invoice from entity,check_invoice,INVOICE,get_invoice,get_invoice
+21281,i do not know how i can inform of problems with signuo,registration_problems,ACCOUNT,registration_problems,payment_issue
+630,could uhelp me cancelin order entity,cancel_order,ORDER,change_order,change_order
+905,question about cancellung purchase entity,cancel_order,ORDER,cancel_order,change_order
+25306,lcate order entity,track_order,ORDER,change_order,change_order
+265,can you help me cancelong purchase entity ?,cancel_order,ORDER,track_order,change_order
+21528,i do not know how i can inform of an error with signjp,registration_problems,ACCOUNT,registration_problems,payment_issue
+23412,shipping address issue,set_up_shipping_address,SHIPPING,set_up_shipping_address,change_shipping_address
+588,i need help cancelnig purchase entity,cancel_order,ORDER,change_order,cancel_order
+2825,i'd like to correct the bloody dadress can i get some help,change_shipping_address,SHIPPING,edit_account,change_shipping_address
+4329,i don't know what to do ti see my invoice from entity,check_invoice,INVOICE,get_invoice,check_invoice
+19800,want help msking a fucking order,place_order,ORDER,delivery_options,place_order
+1365,question about changing purchaes entity,change_order,ORDER,change_shipping_address,change_order
+15470,help me todownload my invoice #00108,get_invoice,INVOICE,check_invoice,check_invoice
+1806,i canot correct the order i made,change_order,ORDER,change_order,change_shipping_address
+19774,help doing a purchase,place_order,ORDER,change_order,place_order
+14112,could you help me editing my fucking account?,edit_account,ACCOUNT,change_shipping_address,edit_account
+10358,what do i have to do to createa premium account,create_account,ACCOUNT,delete_account,delete_account
+23865,is it possible to neter a goddamn shipping address,set_up_shipping_address,SHIPPING,set_up_shipping_address,change_shipping_address
+13875,would you give me information about the shipping period?,delivery_period,DELIVERY,delete_account,delivery_period
+10622,i want a freemium account,create_account,ACCOUNT,create_account,delete_account
+19422,i try to order somethnig,place_order,ORDER,change_order,place_order
+24504,i am trying to change user,switch_account,ACCOUNT,change_shipping_address,change_order
+14015,want assistance updating my account,edit_account,ACCOUNT,change_shipping_address,edit_account
+9025,contactingassistant,contact_human_agent,CONTACT,complaint,contact_human_agent
+21178,what do i need to do to inform of an error with a isgnup,registration_problems,ACCOUNT,registration_problems,payment_issue
+13846,wanna know about delivery periods give me some informtion,delivery_period,DELIVERY,change_shipping_address,delivery_period
+4173,how to seethe bill from entity,check_invoice,INVOICE,get_invoice,check_invoice
+19123,need help to place an oredr,place_order,ORDER,delivery_options,place_order
+11112,i need help to deelete a pro account,delete_account,ACCOUNT,switch_account,create_account
+11440,i need assistance removign the gold account,delete_account,ACCOUNT,switch_account,delete_account
+20976,i have a question about opening user profiles,registration_problems,ACCOUNT,create_account,registration_problems
+8812,what do i have to do to talk with cusromer support?,contact_customer_service,CONTACT,contact_human_agent,contact_customer_service
+13432,can utell me more about delivery periods,delivery_period,DELIVERY,change_shipping_address,delivery_period
+8500,i need help contacting customerservice,contact_customer_service,CONTACT,contact_customer_service,contact_human_agent
+418,i am trying to cancel purchaes entity,cancel_order,ORDER,track_order,cancel_order
+11928,can i order frrom entity,delivery_options,DELIVERY,place_order,delivery_options
+23778,wanna submita goddamn delivery address how could i do it,set_up_shipping_address,SHIPPING,set_up_shipping_address,change_shipping_address
+1239,i nmeed assistance removing some products,change_order,ORDER,change_order,delete_account
+15037,getbills from entity,get_invoice,INVOICE,check_invoice,check_invoice
+10383,i want a pro account,create_account,ACCOUNT,create_account,delete_account
+4949,can i pay witj visa,check_payment_methods,PAYMENT,payment_issue,check_payment_methods
+15663,i need help to getthe invoices from entity,get_invoice,INVOICE,check_invoice,check_invoice
+19468,want assistance to make a purchse,place_order,ORDER,complaint,complaint
+15818,what do i have to do to downlpoad my bill #12588,get_invoice,INVOICE,get_invoice,check_invoice
