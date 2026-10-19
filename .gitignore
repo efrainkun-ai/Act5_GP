@@ -6,3 +6,5 @@ mlruns/
 mlflow.db*
 .mlflow_local/
 *.log
+datos/datos_ini/*.csv
+datos/datos_ini/README_fuente.md

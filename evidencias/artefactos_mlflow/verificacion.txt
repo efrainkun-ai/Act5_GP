@@ -1,0 +1,2 @@
+AI-SupportAssist: prueba de persistencia de artefactos en MLflow.
+Paso 2: configuración. No contiene un modelo ni resultados de entrenamiento.

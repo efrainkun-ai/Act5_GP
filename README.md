@@ -6,7 +6,18 @@ Actividad 5 de Gestión de proyectos de inteligencia artificial. El proyecto da 
 
 Paso 1 completado: estructura y conexión del repositorio. Paso 2 completado: configuración de seguimiento local con MLflow y prueba de persistencia de parámetros, métricas y artefactos. La validación incluida se ejecutó en un entorno local con Python 3.12; en Colab se reproducirá al ejecutar el notebook.
 
-La selección del dataset, los algoritmos y el entrenamiento se desarrollarán en los siguientes pasos. Las métricas de control de este paso no son resultados de un modelo.
+Paso 3 completado: se incorpora un script de obtención del dataset público de Bitext, una versión fija de origen, hashes y documentación de sus campos. Se publican también las copias verificadas de los artefactos de MLflow. La preparación de datos, la selección de algoritmos y el entrenamiento se desarrollarán en los siguientes pasos. Las métricas de control no son resultados de un modelo.
+
+## Elementos solicitados para el repositorio
+
+| Requisito | Archivo o evidencia |
+|---|---|
+| Dataset versionado o script de obtención | `fuentes/obtener_datos.py`, `datos/dataset.lock.json` y `datos/README.md` |
+| Código Python o notebook | Scripts de `fuentes/` y `fuentes/entrena.ipynb` |
+| Evidencias de MLflow | `evidencias/mlflow_verificacion.json` y copias de los dos artefactos en `evidencias/artefactos_mlflow/` |
+| README documentado | Esta guía con pasos de reproducción, decisiones, alcance y pendientes |
+
+Se entrega la alternativa **scripts de obtención**: no es necesario almacenar el CSV completo en GitHub. El código comprueba que la revisión pública corresponde al SHA-256 y la estructura documentados.
 
 ## Estructura
 
@@ -15,11 +26,16 @@ La selección del dataset, los algoritmos y el entrenamiento se desarrollarán e
 | `datos/datos_ini/` | Datos públicos originales y documentación de su origen |
 | `datos/datos_limp/` | Datos limpios y versionados |
 | `fuentes/entrena.ipynb` | Notebook de Colab para entrenamiento y evaluación |
-| `fuentes/datos_prep.py` | Funciones de limpieza |
+| `fuentes/datos_prep.py` | Plantilla pendiente de funciones de limpieza |
+| `fuentes/obtener_datos.py` | Descarga atómica y verificación del dataset de origen |
+| `datos/dataset.lock.json` | Revisión, URLs, hashes y estructura esperada |
+| `datos/README.md` | Origen, licencia y diccionario de campos |
 | `fuentes/train.py` | Entrada por consola; actualmente verifica MLflow sin entrenar |
 | `fuentes/mlflow_config.py` | Configuración local y comprobación de persistencia |
 | `requirements.txt` | Dependencias fijadas para el paso 2 |
 | `evidencias/mlflow_verificacion.json` | Evidencia de la validación local ejecutada |
+| `evidencias/artefactos_mlflow/` | Archivos recuperados de la ejecución de MLflow |
+| `evidencias/dataset_obtencion.json` | Resultado real de la descarga y verificación del dataset |
 | `README.md` | Guía de reproducción y decisiones |
 | `CHANGELOG.md` | Historial de cambios y reporte final |
 
@@ -45,6 +61,23 @@ El remoto `origin` debe apuntar a `https://github.com/efrainkun-ai/Act5_GP.git`.
 
 El notebook incluye descarga del repositorio, instalación de dependencias, ubicación del seguimiento, registro y verificación. En Colab guarda por defecto la base y los artefactos en `MyDrive/Act5_GP/mlflow_local`. Para usar almacenamiento temporal cambia `GUARDAR_EN_DRIVE=False`.
 
+## Obtener el dataset público
+
+Desde la raíz del repositorio, con Python 3.12 e internet:
+
+```bash
+python fuentes/obtener_datos.py
+python fuentes/obtener_datos.py --solo-verificar
+```
+
+La obtención utiliza solo bibliotecas estándar de Python. El script descarga el CSV y la ficha originales desde la revisión fija `430d1a89bd93bd1fa23c16f29dd53e73f0087443` de Bitext, comprueba los tamaños y hashes de ambos archivos y valida los cinco campos, 26,872 filas, 27 intenciones y 11 categorías. No sobrescribe un archivo existente que no coincide. El segundo comando verifica las copias existentes sin descargarlas.
+
+El archivo original y la ficha se conservan en `datos/datos_ini/` y se excluyen de Git porque esta entrega utiliza scripts de obtención. La evidencia queda en `evidencias/dataset_obtencion.json`. La revisión y las huellas están versionadas en `datos/dataset.lock.json`; un cambio futuro de fuente deberá documentarse como una versión nueva.
+
+La entrada prevista es `instruction` y el objetivo es `intent`. No se utilizará `response` como predictor. El dataset es híbrido sintético y está en inglés: sirve como referencia académica de triaje, no como validación de tickets reales de NovaMarket en español. Consulta el origen, la licencia y cada campo en [datos/README.md](datos/README.md).
+
+El notebook incluye una sección del paso 3 para ejecutar esta misma descarga; en Colab con Drive habilitado conserva los originales en `MyDrive/Act5_GP/datos/datos_ini/`.
+
 ## Configurar y verificar MLflow desde la consola
 
 Con Python 3.12, desde la raíz del repositorio:
@@ -65,7 +98,7 @@ La ejecución crea o reutiliza `Act5_GP_Configuracion` y registra:
 
 Luego cierra el run y vuelve a consultar el backend. Verifica el estado `FINISHED`, todos los parámetros y métricas, el listado de artefactos y la igualdad byte a byte de los archivos descargados. Si algún control falla el comando termina con error. Cada repetición crea un run nuevo, conservando el historial del experimento.
 
-La evidencia JSON muestra `VALIDACION_CORRECTA` y seis controles en `true`. El archivo publicado procede de una ejecución local verificada. El commit base identifica el punto de partida del código y el hash `fuente_sha256` identifica el módulo usado. Los identificadores de esa evidencia no implican que los runs existan en tu entorno: al ejecutar tú el notebook se crean tu base, tus artefactos y tu evidencia.
+La evidencia JSON muestra `VALIDACION_CORRECTA` y seis controles en `true`. Las copias de los dos archivos recuperados están disponibles en `evidencias/artefactos_mlflow/`; sus hashes coinciden con el JSON. Consulta [evidencias/README.md](evidencias/README.md) para interpretar su alcance. El archivo publicado procede de una ejecución local verificada. El commit base identifica el punto de partida del código y el hash `fuente_sha256` identifica el módulo usado. Los identificadores de esa evidencia no implican que los runs existan en tu entorno: al ejecutar tú el notebook se crean tu base, tus artefactos y tu evidencia.
 
 En Colab la evidencia queda junto al seguimiento en Drive. Para elegir rutas propias desde consola:
 
@@ -85,7 +118,7 @@ Abre `http://127.0.0.1:5000`, elige `Act5_GP_Configuracion` y revisa parámetros
 
 ## Trabajo posterior
 
-Seleccionar al menos dos algoritmos y un dataset público, definir métricas estandarizadas, preparar y versionar los datos, ejecutar validación cruzada y Grid Search, registrar resultados en MLflow y documentar la comparación técnica. Cada etapa se agregará mediante commits identificables.
+Seleccionar al menos dos algoritmos, definir métricas estandarizadas, preparar y versionar los datos limpios, ejecutar validación cruzada y Grid Search, registrar resultados del entrenamiento en MLflow y documentar la comparación técnica. Cada etapa se agregará mediante commits identificables.
 
 Los datos de NovaMarket y las metas de la fase 1 se tratarán como contexto del business case, no como resultados de este repositorio. No guardar contraseñas, tokens ni información personal de clientes.
 
@@ -94,3 +127,7 @@ Los datos de NovaMarket y las metas de la fase 1 se tratarán como contexto del 
 MLflow Project. (s. f.). *MLflow Tracking Quickstart*. https://mlflow.org/docs/latest/ml/tracking/quickstart/
 
 MLflow Project. (s. f.). *Python API*. https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html
+
+## Referencia del dataset
+
+Bitext Innovations. (2024). *Bitext customer support LLM chatbot training dataset* [Conjunto de datos]. Hugging Face. https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset

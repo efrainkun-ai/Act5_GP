@@ -1,0 +1,7 @@
+{
+  "python": "3.12.14",
+  "mlflow": "3.5.0",
+  "sqlalchemy": "2.0.43",
+  "backend": "SQLite local",
+  "alcance": "Verificación técnica; no se evalúa ningún modelo."
+}

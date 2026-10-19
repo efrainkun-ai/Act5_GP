@@ -1,0 +1,34 @@
+{
+  "version": "bitext_customer_support_v1",
+  "repositorio": "bitext/Bitext-customer-support-llm-chatbot-training-dataset",
+  "revision": "430d1a89bd93bd1fa23c16f29dd53e73f0087443",
+  "autor": "Bitext Innovations",
+  "licencia_declarada": "cdla-sharing-1.0",
+  "idioma": "en",
+  "origen": "hibrido_sintetico",
+  "archivo_csv": "Bitext_Sample_Customer_Support_Training_Dataset_27K_responses-v11.csv",
+  "columnas": [
+    "flags",
+    "instruction",
+    "category",
+    "intent",
+    "response"
+  ],
+  "filas": 26872,
+  "intenciones": 27,
+  "categorias": 11,
+  "archivos": {
+    "Bitext_Sample_Customer_Support_Training_Dataset_27K_responses-v11.csv": {
+      "nombre_original": "Bitext_Sample_Customer_Support_Training_Dataset_27K_responses-v11.csv",
+      "url": "https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset/resolve/430d1a89bd93bd1fa23c16f29dd53e73f0087443/Bitext_Sample_Customer_Support_Training_Dataset_27K_responses-v11.csv",
+      "bytes": 19202474,
+      "sha256": "6f81102b0100b97b8468eb04368033a23206bf1fde9d53500d5806ec1001a434"
+    },
+    "README_fuente.md": {
+      "nombre_original": "README.md",
+      "url": "https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset/resolve/430d1a89bd93bd1fa23c16f29dd53e73f0087443/README.md",
+      "bytes": 11949,
+      "sha256": "f9d490db6059f9749f443d47d3a38618dad168f61f439281738e29b396e451c2"
+    }
+  }
+}

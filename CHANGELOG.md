@@ -1,5 +1,16 @@
 # Historial de cambios y reporte de la actividad
 
+## 0.3.0 Obtención reproducible y documentación de la entrega
+
+- Se mantiene el repositorio `efrainkun-ai/Act5_GP` y su estructura existente.
+- Se implementa `fuentes/obtener_datos.py` con bibliotecas estándar, descarga atómica, control de tamaños y SHA-256 y validación de estructura.
+- Se fija la revisión de Bitext y se versionan los metadatos en `datos/dataset.lock.json`.
+- Se documentan procedencia, licencia, idioma, limitaciones y campos del dataset.
+- Se incorpora evidencia real de obtención y se amplía el notebook con la descarga.
+- Se exportan las copias de los dos artefactos de MLflow y se comprueban contra las huellas del run del paso 2.
+- Se documenta la correspondencia entre los cuatro requisitos y los archivos del repositorio.
+- Este paso no ejecuta limpieza ni entrenamiento; la evidencia de MLflow sigue correspondiendo a configuración.
+
 ## 0.2.0 Configuración y validación de MLflow
 
 - Se configura seguimiento local con SQLite y almacén de artefactos en disco.
