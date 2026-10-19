@@ -1,0 +1,7 @@
+.mlflow_local/
+modelos/
+paquetes/
+__pycache__/
+datos/datos_ini/*.csv
+datos/datos_limp/tickets_clean_v1.csv
+datos/datos_limp/auditoria_v1.csv
