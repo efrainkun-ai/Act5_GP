@@ -1,5 +1,11 @@
 # Historial de cambios y reporte de la actividad
 
+## 0.5.0 Reporte técnico en PDF
+
+- Se incorpora el informe de diez páginas en `informes/Reporte_Tecnico_Actividad5_AI_SupportAssist.pdf`.
+- Se documentan los diez apartados solicitados, con cifras de experimentos reales, referencias y guía de reproducción.
+- Se verifica visualmente la legibilidad de las tablas, gráficas y páginas.
+
 ## 0.4.0 Experimentos y evidencia para el reporte técnico
 
 - Se implementa la preparación v1 con auditoría, reglas explícitas y dataset limpio reproducible.

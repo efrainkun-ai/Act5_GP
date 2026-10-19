@@ -147,3 +147,9 @@ MLflow Project. (s. f.). *Python API*. https://mlflow.org/docs/latest/api_refere
 ## Referencia del dataset
 
 Bitext Innovations. (2024). *Bitext customer support LLM chatbot training dataset* [Conjunto de datos]. Hugging Face. https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset
+
+## Reporte técnico en PDF
+
+[Descargar el reporte técnico de la Actividad 5](informes/Reporte_Tecnico_Actividad5_AI_SupportAssist.pdf).
+
+El documento integra los diez apartados de la actividad: dataset y supuestos, limpieza, versionamiento, visualizaciones, modelos, hiperparámetros, métricas, comparación estadística, evidencia de MLflow y reflexión sobre deuda técnica y MLOps. Sus cifras proceden de la ejecución documentada en `evidencias/entrenamiento_v1/`.
