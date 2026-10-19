@@ -1,0 +1,13 @@
+{
+  "comparacion": "MultinomialNB menos LinearSVC",
+  "diferencia_accuracy": -0.0027066416822819073,
+  "ic95_inferior": -0.005205080158234437,
+  "ic95_superior": 0.0,
+  "solo_nb_correcto": 16,
+  "solo_svm_correcto": 29,
+  "ambos_correctos": 4741,
+  "ambos_incorrectos": 17,
+  "mcnemar_exacto_p": 0.07245426016254441,
+  "bootstrap_iteraciones": 2000,
+  "nivel_significancia": 0.05
+}

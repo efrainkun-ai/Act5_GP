@@ -1,3 +1,3 @@
-# Datos limpios
+# Datos limpios v1
 
-Carpeta reservada para la preparación de datos en una etapa posterior. Todavía no contiene un dataset limpio. El archivo original se obtiene mediante `fuentes/obtener_datos.py`.
+`python fuentes/train.py --entrenar` genera `tickets_clean_v1.csv`, `auditoria_v1.csv`, `split_v1.csv` y `folds_v1.csv`. Se excluyen de Git y se regeneran desde el original fijado. Sus huellas y reglas se documentan en `datos/preparacion_v1.json` y `evidencias/entrenamiento_v1/calidad_datos.json`.

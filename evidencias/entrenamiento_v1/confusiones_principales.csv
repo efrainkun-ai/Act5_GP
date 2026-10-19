@@ -1,0 +1,17 @@
+modelo,real,predicha,casos
+MultinomialNB,check_invoice,get_invoice,5
+MultinomialNB,delivery_period,change_shipping_address,4
+MultinomialNB,get_invoice,check_invoice,4
+MultinomialNB,edit_account,change_shipping_address,3
+MultinomialNB,place_order,change_order,3
+MultinomialNB,cancel_order,change_order,3
+MultinomialNB,cancel_order,track_order,2
+MultinomialNB,change_order,change_shipping_address,2
+LinearSVC,cancel_order,change_order,5
+LinearSVC,registration_problems,payment_issue,5
+LinearSVC,get_invoice,check_invoice,5
+LinearSVC,create_account,delete_account,3
+LinearSVC,set_up_shipping_address,change_shipping_address,3
+LinearSVC,place_order,complaint,2
+LinearSVC,check_invoice,get_invoice,2
+LinearSVC,contact_customer_service,contact_human_agent,1

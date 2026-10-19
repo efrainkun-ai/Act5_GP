@@ -25,3 +25,7 @@ python fuentes/obtener_datos.py --solo-verificar
 ```
 
 El CSV no se aloja en GitHub. Los scripts y el lock versionado permiten obtener los originales idénticos. La carpeta de datos limpios sigue reservada para la siguiente etapa.
+
+## Entrenamiento v1
+
+`entrenamiento_v1/` contiene evidencia distinta de la prueba de configuración: dos modelos entrenados, validación cruzada, Grid Search, métricas en prueba reservada, ROC-AUC, comparación estadística y 15 runs completadas. `mlflow_evidencia.json` confirma la consulta de las métricas y la recuperación de ambos Pipelines desde MLflow. Reproduce con `python fuentes/train.py --entrenar`. La base y los modelos se regeneran en el entorno del usuario; la exportación de evidencias no traslada por sí sola los runs históricos a otra instalación.

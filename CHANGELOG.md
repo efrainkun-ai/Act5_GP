@@ -1,5 +1,17 @@
 # Historial de cambios y reporte de la actividad
 
+## 0.4.0 Experimentos y evidencia para el reporte técnico
+
+- Se implementa la preparación v1 con auditoría, reglas explícitas y dataset limpio reproducible.
+- Se versionan hashes de datos limpios, split 80/20, cinco folds y código fuente.
+- Se entrenan MultinomialNB y LinearSVC con TF-IDF, seis configuraciones y cinco folds por modelo.
+- Se obtienen accuracy, precision/recall/F1 macro y ROC-AUC macro OvR sobre prueba reservada.
+- Se registran 15 ejecuciones en MLflow, se guardan los Pipelines y se comprueba su recarga.
+- Se incorpora comparación estadística exploratoria mediante McNemar exacta y bootstrap pareado.
+- Se publican métricas, resultados por clase, errores agregados y figuras.
+- Se amplía el notebook para reproducir el entrenamiento en Colab.
+- Los resultados son experimentales con datos sintéticos en inglés y no validan las metas empresariales de fase 1.
+
 ## 0.3.0 Obtención reproducible y documentación de la entrega
 
 - Se mantiene el repositorio `efrainkun-ai/Act5_GP` y su estructura existente.
@@ -34,4 +46,4 @@
 
 ## Reporte final
 
-Pendiente. Se completará después de realizar la preparación de datos, los experimentos y el análisis comparativo.
+Los resultados y decisiones se documentan en el reporte técnico en PDF. Las evidencias numéricas reproducibles están en `evidencias/entrenamiento_v1/`.

@@ -8,3 +8,4 @@ mlflow.db*
 *.log
 datos/datos_ini/*.csv
 datos/datos_ini/README_fuente.md
+datos/datos_limp/*.csv

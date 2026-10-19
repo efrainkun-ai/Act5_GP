@@ -1,0 +1,94 @@
+{
+  "experimento": "Act5_GP_Entrenamiento_v1",
+  "ejecuciones_nuevas": 15,
+  "verificaciones": [
+    {
+      "modelo": "MultinomialNB",
+      "run_id": "992ed45a354740febfd30cf142c38c83",
+      "estado": "FINISHED",
+      "parametros": {
+        "seed": "42",
+        "cv_folds": "5",
+        "scoring": "f1_macro",
+        "min_df": "2",
+        "max_features": "20000",
+        "norm": "l2",
+        "sublinear_tf": "True",
+        "train_rows": "19211",
+        "test_rows": "4803",
+        "clean_sha256": "bf4da7cdace69cfa7ffb3a4c138ea98f215baf42a9728f4123152c6d30c41789",
+        "split_sha256": "bc9bce39ee2e08d2d734c6d6d092ebe668e3b1bb97933f39101684bb07432383",
+        "codigo_sha256": "95afadefcd38901a4e79a242379769568bf60b2222489edab5cbbbe298a5a27f",
+        "best_clf__alpha": "0.1",
+        "best_tfidf__ngram_range": "(1, 2)"
+      },
+      "metricas": {
+        "cv_f1_media": 0.9888799820105465,
+        "cv_f1_de": 0.0018816745505012122,
+        "accuracy": 0.9904226525088486,
+        "precision_macro": 0.9904028522046525,
+        "recall_macro": 0.9893494916724335,
+        "f1_macro": 0.9898019233019141,
+        "roc_auc_macro_ovr": 0.9999879895544493,
+        "train_f1_macro": 0.9944918434156038,
+        "busqueda_segundos": 6.079008527000042,
+        "latencia_p95_ms": 0.5447091000064573,
+        "modelo_bytes": 2343129.0
+      },
+      "artefactos": [
+        "MultinomialNB_grid.csv",
+        "MultinomialNB_por_clase.csv",
+        "calidad.png",
+        "calidad_datos.json",
+        "distribucion.png",
+        "entorno.json",
+        "preparacion_v1.json"
+      ],
+      "modelo_recargado": true
+    },
+    {
+      "modelo": "LinearSVC",
+      "run_id": "07cca257012f4410b5a3c58e0cb2e8ae",
+      "estado": "FINISHED",
+      "parametros": {
+        "seed": "42",
+        "cv_folds": "5",
+        "scoring": "f1_macro",
+        "min_df": "2",
+        "max_features": "20000",
+        "norm": "l2",
+        "sublinear_tf": "True",
+        "train_rows": "19211",
+        "test_rows": "4803",
+        "clean_sha256": "bf4da7cdace69cfa7ffb3a4c138ea98f215baf42a9728f4123152c6d30c41789",
+        "split_sha256": "bc9bce39ee2e08d2d734c6d6d092ebe668e3b1bb97933f39101684bb07432383",
+        "codigo_sha256": "95afadefcd38901a4e79a242379769568bf60b2222489edab5cbbbe298a5a27f",
+        "best_clf__C": "1.0",
+        "best_tfidf__ngram_range": "(1, 2)"
+      },
+      "metricas": {
+        "cv_f1_media": 0.9918713848460128,
+        "cv_f1_de": 0.0012641579168267678,
+        "accuracy": 0.9931292941911305,
+        "precision_macro": 0.993350735796132,
+        "recall_macro": 0.9921368884126693,
+        "f1_macro": 0.9926775523709807,
+        "roc_auc_macro_ovr": 0.9999813233844761,
+        "train_f1_macro": 0.998305769306909,
+        "busqueda_segundos": 11.887716891999844,
+        "latencia_p95_ms": 0.2949855498400211,
+        "modelo_bytes": 1272160.0
+      },
+      "artefactos": [
+        "LinearSVC_grid.csv",
+        "LinearSVC_por_clase.csv",
+        "calidad.png",
+        "calidad_datos.json",
+        "distribucion.png",
+        "entorno.json",
+        "preparacion_v1.json"
+      ],
+      "modelo_recargado": true
+    }
+  ]
+}

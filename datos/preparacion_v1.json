@@ -1,0 +1,19 @@
+{
+  "version": "preparacion_v1",
+  "revision_origen": "430d1a89bd93bd1fa23c16f29dd53e73f0087443",
+  "sha256_original": "6f81102b0100b97b8468eb04368033a23206bf1fde9d53500d5806ec1001a434",
+  "sha256_limpio": "bf4da7cdace69cfa7ffb3a4c138ea98f215baf42a9728f4123152c6d30c41789",
+  "sha256_split": "bc9bce39ee2e08d2d734c6d6d092ebe668e3b1bb97933f39101684bb07432383",
+  "sha256_folds": "f9709d2766d6c4e8f9309912fa270b37093704d983a11748ac750a3b0268ecc9",
+  "semilla": 42,
+  "filas_train": 19211,
+  "filas_test": 4803,
+  "predictor": "text_clean",
+  "objetivo": "intent_clean",
+  "reglas": "Unicode NFKC, minúsculas, espacios, entidades comunes, vacíos/conflictos/duplicados excluidos",
+  "sha256_fuentes": {
+    "datos_prep.py": "2a40845be5d841bbe78c5703d71b688de0735a22070c35145db7d679712e5444",
+    "experimentos.py": "95afadefcd38901a4e79a242379769568bf60b2222489edab5cbbbe298a5a27f",
+    "train.py": "ecf3c377c444dc3a2d9a2fd6cdc4b1850d177f6db1f1242b829d696e3364bbfa"
+  }
+}

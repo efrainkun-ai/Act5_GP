@@ -4,20 +4,9 @@ Actividad 5 de Gestión de proyectos de inteligencia artificial. El proyecto da 
 
 ## Estado de avance
 
-Paso 1 completado: estructura y conexión del repositorio. Paso 2 completado: configuración de seguimiento local con MLflow y prueba de persistencia de parámetros, métricas y artefactos. La validación incluida se ejecutó en un entorno local con Python 3.12; en Colab se reproducirá al ejecutar el notebook.
+Se completaron la preparación del repositorio, la obtención verificada del dataset, la configuración de MLflow y los experimentos requeridos para el reporte técnico. El entrenamiento se ejecutó localmente con Python 3.12 y dependencias fijadas; el notebook permite reproducirlo en Colab.
 
-Paso 3 completado: se incorpora un script de obtención del dataset público de Bitext, una versión fija de origen, hashes y documentación de sus campos. Se publican también las copias verificadas de los artefactos de MLflow. La preparación de datos, la selección de algoritmos y el entrenamiento se desarrollarán en los siguientes pasos. Las métricas de control no son resultados de un modelo.
-
-## Elementos solicitados para el repositorio
-
-| Requisito | Archivo o evidencia |
-|---|---|
-| Dataset versionado o script de obtención | `fuentes/obtener_datos.py`, `datos/dataset.lock.json` y `datos/README.md` |
-| Código Python o notebook | Scripts de `fuentes/` y `fuentes/entrena.ipynb` |
-| Evidencias de MLflow | `evidencias/mlflow_verificacion.json` y copias de los dos artefactos en `evidencias/artefactos_mlflow/` |
-| README documentado | Esta guía con pasos de reproducción, decisiones, alcance y pendientes |
-
-Se entrega la alternativa **scripts de obtención**: no es necesario almacenar el CSV completo en GitHub. El código comprueba que la revisión pública corresponde al SHA-256 y la estructura documentados.
+El experimento `Act5_GP_Entrenamiento_v1` compara MultinomialNB y LinearSVC con TF-IDF, cinco folds estratificados, Grid Search y prueba reservada. Los resultados, las verificaciones y las versiones se conservan en `evidencias/entrenamiento_v1/`. Son resultados de un prototipo con datos sintéticos en inglés, no de producción en NovaMarket.
 
 ## Estructura
 
@@ -26,11 +15,12 @@ Se entrega la alternativa **scripts de obtención**: no es necesario almacenar e
 | `datos/datos_ini/` | Datos públicos originales y documentación de su origen |
 | `datos/datos_limp/` | Datos limpios y versionados |
 | `fuentes/entrena.ipynb` | Notebook de Colab para entrenamiento y evaluación |
-| `fuentes/datos_prep.py` | Plantilla pendiente de funciones de limpieza |
+| `fuentes/datos_prep.py` | Limpieza determinista, deduplicación y auditoría completa |
 | `fuentes/obtener_datos.py` | Descarga atómica y verificación del dataset de origen |
 | `datos/dataset.lock.json` | Revisión, URLs, hashes y estructura esperada |
 | `datos/README.md` | Origen, licencia y diccionario de campos |
-| `fuentes/train.py` | Entrada por consola; actualmente verifica MLflow sin entrenar |
+| `fuentes/train.py` | Entrada por consola para verificar MLflow o ejecutar el entrenamiento |
+| `fuentes/experimentos.py` | Pipelines, Grid Search, métricas, estadística y registro de modelos |
 | `fuentes/mlflow_config.py` | Configuración local y comprobación de persistencia |
 | `requirements.txt` | Dependencias fijadas para el paso 2 |
 | `evidencias/mlflow_verificacion.json` | Evidencia de la validación local ejecutada |
@@ -39,7 +29,7 @@ Se entrega la alternativa **scripts de obtención**: no es necesario almacenar e
 | `README.md` | Guía de reproducción y decisiones |
 | `CHANGELOG.md` | Historial de cambios y reporte final |
 
-`Act5_GP` es el nombre elegido para el repositorio y cumple la función de la carpeta raíz `Actividad5` de la consigna. Las carpetas de datos incluyen archivos `.gitkeep` para conservarlas mientras están vacías. El notebook y el script de entrada ya implementan la configuración de MLflow. Las funciones de limpieza y entrenamiento se completarán por etapas.
+`Act5_GP` es el nombre elegido para el repositorio y cumple la función de la carpeta raíz `Actividad5` de la consigna. Las carpetas de datos incluyen archivos `.gitkeep` para conservarlas mientras están vacías. El notebook y el script de entrada ya implementan la configuración de MLflow. La preparación y el entrenamiento ya se implementan mediante módulos separados.
 
 ## Obtener una copia y comprobar la conexión
 
@@ -116,11 +106,37 @@ mlflow ui --backend-store-uri sqlite:///.mlflow_local/mlflow.db --host 127.0.0.1
 
 Abre `http://127.0.0.1:5000`, elige `Act5_GP_Configuracion` y revisa parámetros, métricas y artefactos. En Colab la validación utiliza el cliente y no necesita un túnel público. La base y los artefactos se guardan juntos en su ubicación de trabajo y no se suben a GitHub. El repositorio contiene la configuración y la evidencia reproducible.
 
-## Trabajo posterior
+## Reproducir preparación y entrenamiento
 
-Seleccionar al menos dos algoritmos, definir métricas estandarizadas, preparar y versionar los datos limpios, ejecutar validación cruzada y Grid Search, registrar resultados del entrenamiento en MLflow y documentar la comparación técnica. Cada etapa se agregará mediante commits identificables.
+```bash
+python -m pip install -r requirements.txt
+python fuentes/obtener_datos.py
+python fuentes/train.py --entrenar
+```
 
-Los datos de NovaMarket y las metas de la fase 1 se tratarán como contexto del business case, no como resultados de este repositorio. No guardar contraseñas, tokens ni información personal de clientes.
+El segundo modo de `train.py`, `--verificar-mlflow`, conserva la prueba de infraestructura del paso 2. `--entrenar` prepara el dataset, crea particiones, entrena los dos modelos, ajusta hiperparámetros, evalúa, calcula ROC-AUC macro OvR y registra modelos y artefactos reales en MLflow. El modo de entrenamiento necesita CPU, no GPU ni servicios de pago.
+
+| Evidencia | Contenido |
+|---|---|
+| `datos/preparacion_v1.json` | Hashes del dataset limpio, particiones, folds y fuentes |
+| `evidencias/entrenamiento_v1/calidad_datos.json` | Diagnóstico y exclusiones |
+| `evidencias/entrenamiento_v1/comparacion_modelos.csv` | Accuracy, precision, recall, F1, ROC-AUC, CV y recursos |
+| `evidencias/entrenamiento_v1/*_grid.csv` | Configuraciones y resultados de cada fold |
+| `evidencias/entrenamiento_v1/*_por_clase.csv` | Métricas desglosadas por intención |
+| `evidencias/entrenamiento_v1/estadistica.json` | McNemar exacta y bootstrap pareado |
+| `evidencias/entrenamiento_v1/mlflow_runs.csv` | Las 15 ejecuciones de la corrida |
+| `evidencias/entrenamiento_v1/mlflow_evidencia.json` | Parámetros, métricas, artefactos y recarga de ambos modelos |
+| `evidencias/entrenamiento_v1/figuras/` | Gráficos obtenidos del experimento |
+
+Los CSV limpios y las particiones se regeneran en `datos/datos_limp/` y se excluyen de Git; sus hashes quedan versionados. La base SQLite, los modelos exportados y el almacén completo de MLflow permanecen en `.mlflow_local/` o en la ruta indicada con `--tracking-dir`. Al reproducir se generan nuevos identificadores de run. La evidencia publicada pertenece a la ejecución local documentada.
+
+## Decisiones y límites
+
+Se excluyen textos vacíos, etiquetas contradictorias y duplicados exactos después de normalizar. Se reserva 20 % de prueba y TF-IDF se aprende dentro de cada fold. F1 macro de CV decide la selección. ROC-AUC se calcula por clase frente al resto: probabilidades en Naive Bayes y márgenes de decisión en SVM, sin tratar márgenes como probabilidades.
+
+SVM lineal fue seleccionado por CV. La diferencia de accuracy en prueba no resultó concluyente al nivel del 5 %. No se modifica la configuración usando ese conjunto de prueba. Aún se requiere evaluación externa en español, separación por familias de paráfrasis cuando existan sus identificadores, revisión humana, monitoreo y validación operativa de FRT, AHT, CSAT y ROI.
+
+Los parámetros del business case de NovaMarket siguen siendo metas o supuestos. No se ha desplegado este prototipo en producción.
 
 ## Referencias del paso 2
 
