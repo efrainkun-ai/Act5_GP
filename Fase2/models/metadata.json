@@ -1,0 +1,33 @@
+{
+  "model_version": "act6-nb-financial-v1",
+  "algorithm": "TF-IDF + MultinomialNB(alpha=0.1)",
+  "threshold": 0.24,
+  "financial_categories": [
+    "CANCEL",
+    "INVOICE",
+    "PAYMENT",
+    "REFUND"
+  ],
+  "scope": "synthetic_english_retrospective",
+  "created_at_utc": "2026-11-02T01:34:55.688791+00:00",
+  "origin": "Regeneración del candidato seleccionado en actividad 6; no es el archivo binario histórico.",
+  "model_sha256": "3bcdf28fb22781d16bb2840ac9bd2f1861c7aae2853e7f4fc40695e1c8553790",
+  "raw_sha256": "6f81102b0100b97b8468eb04368033a23206bf1fde9d53500d5806ec1001a434",
+  "dataset_revision": "430d1a89bd93bd1fa23c16f29dd53e73f0087443",
+  "dataset_url": "https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset/resolve/430d1a89bd93bd1fa23c16f29dd53e73f0087443/Bitext_Sample_Customer_Support_Training_Dataset_27K_responses-v11.csv",
+  "dataset_license": "CDLA-Sharing-1.0 (según ficha del dataset)",
+  "split_sha256": "2e24b771a37a18926566f3278a00bd68bd4a6ebb40113183df924e810ed4bb88",
+  "preprocessing_sha256": "bfa890cc40993c19d74d05bdc8d1ca1abf81870b9b0473ab2fc7174dec2d5f4b",
+  "training_script_sha256": "2df92d0d30779221254cc44ffd0e06e29b052c7ff27855cc4829daf9f5ebc475",
+  "environment": {
+    "python": "3.12.14",
+    "scikit-learn": "1.8.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "joblib": "1.5.3",
+    "pandas": "2.2.3"
+  },
+  "n_fit": 14408,
+  "n_validation": 4803,
+  "n_test": 4803
+}

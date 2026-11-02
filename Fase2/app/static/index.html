@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI-SupportAssist · Triaje financiero</title>
+  <link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script>
+</head>
+<body>
+<header><a href="/" class="brand"><span class="mark">S</span> AI-SupportAssist</a><span class="project">NOVAMARKET / FASE 2</span></header>
+<main>
+  <div class="intro"><span class="eyebrow">ASISTENCIA AL EQUIPO DE SOPORTE</span><h1>Cada solicitud,<br>en la ruta adecuada.</h1><p>Identifica los tickets que necesitan atención financiera humana con una consulta al modelo de triaje.</p></div>
+  <div class="workspace">
+    <section class="editor" aria-labelledby="ticket-title">
+      <div class="section-top"><span class="step">01</span><h2 id="ticket-title">Revisar una solicitud</h2></div>
+      <form id="ticket-form">
+        <label for="text">Texto del ticket <span>Máximo 4,000 caracteres</span></label>
+        <textarea id="text" name="text" maxlength="4000" required placeholder="Ej. Where is my refund?"></textarea>
+        <label for="language">Idioma declarado del ticket</label>
+        <select id="language"><option value="en">Inglés · evaluación disponible</option><option value="es">Español · requiere revisión humana</option></select>
+        <p class="hint">El prototipo se evaluó con textos sintéticos en inglés. No envíes datos personales.</p>
+        <button type="submit" id="submit">Analizar solicitud <span aria-hidden="true">→</span></button>
+      </form>
+      <div class="examples"><p>Prueba un ejemplo</p><button type="button" data-example="Where is my refund?">Reembolso</button><button type="button" data-example="I forgot my password">Acceso a cuenta</button><button type="button" data-example="How can I get my invoice?">Factura</button></div>
+    </section>
+    <section class="result" aria-labelledby="result-title" aria-live="polite" aria-atomic="true">
+      <div class="section-top"><span class="step">02</span><h2 id="result-title">Resultado del triaje</h2></div>
+      <div id="empty"><div class="empty-icon" aria-hidden="true">↗</div><h3>La siguiente ruta empieza aquí</h3><p>Escribe una solicitud y selecciona «Analizar solicitud» para consultar su clasificación.</p></div>
+      <div id="output" hidden><span class="status" id="status">Análisis completado</span><h3 id="route"></h3><p id="explanation"></p><div class="score"><span>Puntuación financiera del modelo</span><strong id="score"></strong></div><progress id="meter" max="1" value="0" aria-label="Puntuación financiera"></progress><p class="small">Umbral de derivación: <strong id="threshold"></strong>. La puntuación no garantiza certeza en casos reales.</p><dl><div><dt>Revisión humana</dt><dd>Requerida</dd></div><div><dt>Tiempo de inferencia</dt><dd id="latency"></dd></div><div><dt>Referencia</dt><dd id="request-id"></dd></div></dl></div>
+      <div id="error" role="alert" hidden><span class="status review">Revisión necesaria</span><h3>No se emitió una clasificación</h3><p id="error-message"></p><p class="small">Envía el caso a un agente de soporte.</p></div>
+    </section>
+  </div>
+  <footer><span class="dot"></span> Prototipo académico · Clasificación binaria · Supervisión humana <span class="footer-end">No autoriza pagos ni reembolsos.</span></footer>
+</main>
+</body></html>

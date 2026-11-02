@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+data/
+evidence/local-*.json
+evidence/*.png
+evidence/junit*.xml
+evidence/*log.txt
