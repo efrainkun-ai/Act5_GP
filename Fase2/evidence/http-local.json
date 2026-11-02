@@ -1,0 +1,99 @@
+{
+  "executed_at_utc": "2026-11-02T01:51:15.775965+00:00",
+  "base_url": "http://127.0.0.1:8765",
+  "passed": 10,
+  "cases": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 1.647
+    },
+    {
+      "method": "GET",
+      "path": "/ready",
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 1.381
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 5.952
+    },
+    {
+      "method": "GET",
+      "path": "/static/app.js",
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 2.261
+    },
+    {
+      "method": "GET",
+      "path": "/openapi.json",
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 4.866
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/model",
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 1.283
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/predict",
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 6.286,
+      "response": {
+        "label": 1,
+        "route": "atencion_financiera_humana",
+        "financial_score": 0.9974199985956848,
+        "threshold": 0.24,
+        "model_version": "act6-nb-financial-v1",
+        "human_review_required": true,
+        "scope": "synthetic_english_retrospective",
+        "request_id": "592459f8-edd3-45bb-a0c2-79d292786afb",
+        "latency_ms": 3.047
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/predict",
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 4.385,
+      "response": {
+        "label": 0,
+        "route": "otra_ruta_soporte",
+        "financial_score": 0.001286348717558195,
+        "threshold": 0.24,
+        "model_version": "act6-nb-financial-v1",
+        "human_review_required": true,
+        "scope": "synthetic_english_retrospective",
+        "request_id": "2aeb21b4-e7f5-4326-b9ae-6badb099ed9e",
+        "latency_ms": 2.433
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/predict",
+      "expected_status": 422,
+      "actual_status": 422,
+      "elapsed_ms": 1.337
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/predict",
+      "expected_status": 422,
+      "actual_status": 422,
+      "elapsed_ms": 1.565
+    }
+  ]
+}

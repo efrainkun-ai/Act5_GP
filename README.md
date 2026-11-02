@@ -163,3 +163,8 @@ Bitext Innovations. (2024). *Bitext customer support LLM chatbot training datase
 [Descargar el reporte técnico de la Actividad 5](informes/Reporte_Tecnico_Actividad5_AI_SupportAssist.pdf).
 
 El documento integra los diez apartados de la actividad: dataset y supuestos, limpieza, versionamiento, visualizaciones, modelos, hiperparámetros, métricas, comparación estadística, evidencia de MLflow y reflexión sobre deuda técnica y MLOps. Sus cifras proceden de la ejecución documentada en `evidencias/entrenamiento_v1/`.
+
+
+## Continuidad del proyecto en la fase 2
+
+La aplicación de triaje financiero, el modelo, Docker y el manual están en [Fase2](Fase2/README.md). La rama `fase2-ai-supportassist` conserva esta ampliación para revisión. Consulte [el manual](Fase2/docs/MANUAL_DESPLIEGUE.md) y [la verificación contra los ejemplos](Fase2/docs/VERIFICACION_EJEMPLOS.md).

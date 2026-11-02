@@ -1,0 +1,104 @@
+{
+  "source_document": "Captura de evitencias.docx",
+  "source_sha256": "0e8ac5d2c1f5f3f2602e393b470315668005d52214a6201a290686253fc85293",
+  "source_image_count": 13,
+  "included_figures": 8,
+  "treatment": "Se revisaron las 13 imágenes. Se seleccionaron ocho figuras; E03 y E07 recortan el encuadre y E08 omite la barra de marcadores. No se alteran cifras ni resultados. Las restantes son preparativos o duplicados. Los archivos JSON locales sólo se observan exportados en una captura y no se presentan como archivos originales recibidos.",
+  "inventory": [
+    {
+      "source_image": "image.png",
+      "description": "Instalación Git",
+      "sha256": "d3419c7d6de13fb9a12c23e1bed60983f4502dcbd57e53c48c5f36792b065b35",
+      "figures": []
+    },
+    {
+      "source_image": "image2.png",
+      "description": "Motor Docker activo",
+      "sha256": "1da27b69822ad07e3ba55cdd504eeca66b4873d5e4c4596fa68fdd9c077110fa",
+      "figures": []
+    },
+    {
+      "source_image": "image3.png",
+      "description": "Git y clonación",
+      "sha256": "8fa23b85077ebed0e20e7c25f48f76820cd4146b53691ef4d3594b1bcd5b9691",
+      "figures": [
+        "E01"
+      ]
+    },
+    {
+      "source_image": "image4.png",
+      "description": "Transcript fecha y commit",
+      "sha256": "ed09a4acab9a7dc200899b9dff8e3a655abc487cb1ff4ecaccfd1cbdd4ce3dc7",
+      "figures": [
+        "E02"
+      ]
+    },
+    {
+      "source_image": "image5.png",
+      "description": "Construcción parte inicial",
+      "sha256": "ad7b0cf7d06103dff05b84c4b8954b3daf3dd9d8d99af5e725e581569d59b09b",
+      "figures": []
+    },
+    {
+      "source_image": "image6.png",
+      "description": "Construcción final e imagen",
+      "sha256": "9db0befdbdda6fecc1036bada065dd706fd8de062adf3ea19edd585e4138d5df",
+      "figures": [
+        "E03"
+      ]
+    },
+    {
+      "source_image": "image7.png",
+      "description": "Contenedor saludable y ready",
+      "sha256": "7ca10094c54f247333daa33f7308520e58ddb982edc2462ffc527615abb04f94",
+      "figures": [
+        "E04"
+      ]
+    },
+    {
+      "source_image": "image8.png",
+      "description": "Predicción financiera local",
+      "sha256": "09e4050d7af08c9c7e3af0d89621ad699eb86590957209ebefff685bd9519a77",
+      "figures": [
+        "E05"
+      ]
+    },
+    {
+      "source_image": "image9.png",
+      "description": "Predicción no financiera local",
+      "sha256": "22f4c4104ff3cd5ceed1ad0566524b50437eba0e1b2ca70d80bb24b5771173f6",
+      "figures": []
+    },
+    {
+      "source_image": "imagea.png",
+      "description": "Exportación de evidencias local",
+      "sha256": "b670f04bef3cdcb6d5c7a4bab89ed9ab9879ab6a694cb72947d0ccb4bfff3e82",
+      "figures": []
+    },
+    {
+      "source_image": "imageb.png",
+      "description": "Predicción no financiera local repetida",
+      "sha256": "d1d384f519a728bd60c6b25480e856af3345441693fc88efa8f0bf7b13d0cf9f",
+      "figures": [
+        "E06"
+      ]
+    },
+    {
+      "source_image": "imagec.png",
+      "description": "Despliegue Render",
+      "sha256": "4c9d5b2773c9548c0f64f8e4773a4840ce410184b1396aeac8b9302ad3db44fd",
+      "figures": [
+        "E07"
+      ]
+    },
+    {
+      "source_image": "imaged.png",
+      "description": "Predicción pública de factura",
+      "sha256": "50af21f957688fe3ac0dfd049f7174ce038069a93c709875d47171868c58840a",
+      "figures": [
+        "E08"
+      ]
+    }
+  ],
+  "public_distribution": "El repositorio sólo publica descripciones y huellas. Las imágenes están en los documentos Word entregados por separado."
+}

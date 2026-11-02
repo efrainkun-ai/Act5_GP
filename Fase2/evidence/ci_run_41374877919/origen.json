@@ -1,0 +1,11 @@
+{
+  "run_id": 41374877919,
+  "artifact_id": 13110821954,
+  "artifact_name": "fase2-evidencias-2",
+  "head_sha": "f810851c66310fb1b5208d323c5bd3549bafaa66",
+  "tested_merge_sha": "7fa0dd755431d10711966af90f724ef4bb0dc433",
+  "run_url": "https://github.com/efrainkun-ai/Act5_GP/actions/runs/41374877919",
+  "artifact_zip_sha256": "8c661536d5f4e86a7fddb72e73ecbf3c4ee5d0a60e71bb1a927e118bcb89bafe",
+  "conclusion": "success",
+  "original_artifact_expiration_utc": "2026-12-02T01:55:27Z"
+}

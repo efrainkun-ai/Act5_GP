@@ -1,0 +1,15 @@
+# Configuración preparada; no crea recursos hasta aplicarla en Render.
+services:
+  - type: web
+    name: ai-supportassist-fase2
+    runtime: docker
+    repo: https://github.com/efrainkun-ai/Act5_GP
+    branch: fase2-ai-supportassist
+    rootDir: Fase2
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /ready
+    autoDeploy: false
+    envVars:
+      - key: PORT
+        value: '8000'
