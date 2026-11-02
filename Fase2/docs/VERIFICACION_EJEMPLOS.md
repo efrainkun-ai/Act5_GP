@@ -11,7 +11,7 @@ La implementación sigue el flujo docente: modelo entrenado y guardado, simulaci
 | Modelo serializado | model.pkl o modelo_desercion.pkl | models/financial_nb.joblib y metadata.json | Modelo regenerado y recargado; matriz histórica reproducida |
 | API | FastAPI en app.py/main.py | app/main.py con carga durante lifespan | Pruebas de contrato satisfactorias |
 | Entradas | Campos tipados de transacción o consulta de deserción | JSON con texto e idioma declarado | Validación y errores probados |
-| Salud | GET /health | GET /health y /ready | HTTP 200 comprobado fuera de Docker |
+| Salud | GET /health | GET /health y /ready | HTTP 200 comprobado en Docker y Render |
 | Inferencia | POST /predict | POST /api/v1/predict | Consumo HTTP y navegador comprobados |
 | Dependencias | requirements.txt | Versiones fijadas de inferencia y desarrollo | Instalación y ejecución local comprobadas |
 | Imagen base | python:3.12-slim en ambos ejemplos GitHub | python:3.12-slim | Coincide la familia de runtime |
@@ -19,7 +19,7 @@ La implementación sigue el flujo docente: modelo entrenado y guardado, simulaci
 | Publicación de puerto | 8000:8000 o 8000:80 | 127.0.0.1:8000:8000 en Compose | Restricción local intencional |
 | Consumo externo | test_api.py o SimulaConsumo.py | scripts/smoke.py | Diez verificaciones HTTP satisfactorias |
 | Frontend | Swagger; no interfaz propia en los main.py revisados | HTML/CSS/JS con fetch real | Chromium comprobó dos rutas, rechazo de español y vista móvil |
-| Nube | Estrategia PaaS y Procfile del ejemplo | Docker sobre PaaS y render.yaml | Procedimiento documentado; publicación cloud no ejecutada |
+| Nube | Estrategia PaaS y Procfile del ejemplo | Docker sobre PaaS y render.yaml | Render Live y comprobación HTTP pública conservada |
 | Documentación | README y plantilla técnica | README, manual, referencias y matriz de comprobación | Adaptados al proyecto |
 
 ## Resultados ejecutados en el entorno de desarrollo
@@ -34,9 +34,7 @@ Las evidencias se guardan en `evidence/model_reconstruction.json`, `junit-local.
 
 ## Construcción Docker y ejecución local
 
-El entorno de elaboración no ofrece motor Docker ni socket accesible. No se presenta la ejecución Uvicorn como prueba Docker. El workflow `fase2.yml` está preparado para construir y arrancar Docker en un runner y repetir pruebas HTTP y de navegador; consulte la conclusión y los artefactos del run para acreditar ese entorno.
-
-Para acreditar la laptop del estudiante, ejecute los pasos 6 a 8 del manual y conserve salida de build, `docker ps`, logs, estado healthy y resultados HTTP. Esta evidencia debe provenir de ese equipo. Un workflow remoto satisfactorio no acredita que ya se ejecutó Docker Desktop allí.
+El run 41374877919 acredita Docker en GitHub Actions. Las capturas E01 a E06 acreditan adicionalmente la ejecución en Windows del estudiante: imagen 7d109de9eb50, contenedor healthy y rutas financiera y no financiera en localhost. Las figuras E07 y E08 acreditan publicación en Render del commit eba2c4f y resultado del frontend público. Consulte evidence/capturas/README.md y evidence/render/cloud-http.json. Los ID de imagen de CI y de la laptop pertenecen a construcciones distintas.
 
 ## Diferencias justificadas y correcciones a las referencias PDF
 

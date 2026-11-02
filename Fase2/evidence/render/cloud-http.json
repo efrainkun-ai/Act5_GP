@@ -1,0 +1,167 @@
+{
+  "executed_at_utc": "2026-11-02T04:14:40.574108+00:00",
+  "base_url": "https://ai-supportassist-fase2.onrender.com",
+  "source_deployed_commit": "eba2c4fe6ecbda062e71d6d3f71f8b6a29f97685",
+  "deployment_commit_source": "captura Render proporcionada por el estudiante; SHA abreviado eba2c4f",
+  "executor": "verificación HTTP remota de esta entrega; no ejecutada desde la laptop",
+  "passed": 10,
+  "cases": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "input": null,
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 3384.475,
+      "response": {
+        "status": "ok",
+        "version": "2.0.0"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ready",
+      "input": null,
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 2502.537,
+      "response": {
+        "status": "ready",
+        "model_version": "act6-nb-financial-v1"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "input": null,
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 3436.328
+    },
+    {
+      "method": "GET",
+      "path": "/static/app.js",
+      "input": null,
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 2718.004
+    },
+    {
+      "method": "GET",
+      "path": "/openapi.json",
+      "input": null,
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 2704.901
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/model",
+      "input": null,
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 2978.101,
+      "response": {
+        "model_version": "act6-nb-financial-v1",
+        "algorithm": "TF-IDF + MultinomialNB(alpha=0.1)",
+        "threshold": 0.24,
+        "financial_categories": [
+          "CANCEL",
+          "INVOICE",
+          "PAYMENT",
+          "REFUND"
+        ],
+        "environment": {
+          "python": "3.12.14",
+          "scikit-learn": "1.8.0",
+          "numpy": "2.3.5",
+          "scipy": "1.17.0",
+          "joblib": "1.5.3",
+          "pandas": "2.2.3"
+        },
+        "scope": "synthetic_english_retrospective"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/predict",
+      "input": {
+        "text": "Where is my refund?",
+        "language": "en"
+      },
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 2994.622,
+      "response": {
+        "label": 1,
+        "route": "atencion_financiera_humana",
+        "financial_score": 0.9974199985956848,
+        "threshold": 0.24,
+        "model_version": "act6-nb-financial-v1",
+        "human_review_required": true,
+        "scope": "synthetic_english_retrospective",
+        "request_id": "f5124a1d-bcef-4101-8ad1-f6e5f062c02a",
+        "latency_ms": 4.046
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/predict",
+      "input": {
+        "text": "I forgot my password",
+        "language": "en"
+      },
+      "expected_status": 200,
+      "actual_status": 200,
+      "elapsed_ms": 2837.676,
+      "response": {
+        "label": 0,
+        "route": "otra_ruta_soporte",
+        "financial_score": 0.001286348717558195,
+        "threshold": 0.24,
+        "model_version": "act6-nb-financial-v1",
+        "human_review_required": true,
+        "scope": "synthetic_english_retrospective",
+        "request_id": "d7969b36-f494-4e12-a54d-45abf8ca9082",
+        "latency_ms": 1.989
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/predict",
+      "input": {
+        "text": "",
+        "language": "en"
+      },
+      "expected_status": 422,
+      "actual_status": 422,
+      "elapsed_ms": 2742.022,
+      "response": {
+        "detail": [
+          {
+            "loc": [
+              "body",
+              "text"
+            ],
+            "msg": "String should have at least 1 character",
+            "type": "string_too_short"
+          }
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/predict",
+      "input": {
+        "text": "Quiero un reembolso",
+        "language": "es"
+      },
+      "expected_status": 422,
+      "actual_status": 422,
+      "elapsed_ms": 2329.404,
+      "response": {
+        "detail": "El modelo está validado sólo con inglés sintético. Requiere revisión humana."
+      }
+    }
+  ]
+}

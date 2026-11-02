@@ -29,7 +29,7 @@ El modelo incluido fue **regenerado** con las operaciones y particiones de activ
 
 ## Inicio con Docker
 
-Requiere Git, Docker Engine o Docker Desktop en ejecución y Docker Compose v2. Desde una carpeta de trabajo:
+Requiere Git, Docker Engine o Docker Desktop en ejecución y Docker Compose compatible con `up --wait` (se utilizó v5.6.1). Desde una carpeta de trabajo:
 
 ```bash
 git clone --branch fase2-ai-supportassist https://github.com/efrainkun-ai/Act5_GP.git
@@ -102,6 +102,18 @@ python -m scripts.rebuild_model
 ```
 
 Descarga el CSV de una revisión fija, verifica SHA-256, reproduce limpieza y particiones 60/20/20 y ajusta el candidato ya seleccionado. Selecciona el umbral exclusivamente con validación y comprueba concordancia con los resultados históricos antes de guardar. Cambian la fecha y posiblemente los bytes serializados; conserve juntos el nuevo modelo, metadatos y evidencia. El dataset no se sube al repositorio.
+
+## Servicio público y entregables
+
+Despliegue realizado en Render: **https://ai-supportassist-fase2.onrender.com**. Estado y modelo: [/ready](https://ai-supportassist-fase2.onrender.com/ready). Documentación interactiva: [/docs](https://ai-supportassist-fase2.onrender.com/docs).
+
+Las capturas acreditan Docker en Windows y la publicación del commit `eba2c4f`. La comprobación HTTP de nube pasó diez casos y una consulta adicional de Swagger. Son verificaciones funcionales de demostración; el modelo conserva el alcance de inglés sintético. El plan Free puede necesitar reactivación después de inactividad.
+
+- [Dockerfile](Dockerfile) y [Compose](compose.yaml).
+- [Manual de despliegue](docs/MANUAL_DESPLIEGUE.md); el Word con capturas se entrega por separado.
+- [Validación y pruebas](docs/VALIDACION_PRUEBAS.md); el Word con capturas se entrega por separado.
+- [Capturas e interpretación](evidence/capturas/README.md).
+- [Resultados HTTP públicos](evidence/render/cloud-http.json) y [contrato OpenAPI público](evidence/render/openapi.json).
 
 ## Estado y evidencias
 

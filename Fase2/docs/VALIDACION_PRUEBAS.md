@@ -1,12 +1,12 @@
 # Validación y pruebas de AI SupportAssist
 
 Proyecto fase 2 · Gestión de proyectos de inteligencia artificial
-Efraín Cuatecontzi Mendoza · AL07180332
-Universidad Tecmilenio · 1 de noviembre de 2026 · Versión 1.0
+Efraín Cuatecontzi Mendoza
+Universidad Tecmilenio · 1 de noviembre de 2026 · Versión 2.0
 
 ## 1 Propósito y dictamen
 
-La aplicación de triaje financiero superó las verificaciones funcionales definidas para el prototipo: 30 pruebas automatizadas, 10 comprobaciones HTTP sobre el contenedor y un recorrido de interfaz en Chromium. La imagen se construyó y el contenedor alcanzó estado running y healthy en GitHub Actions. El resultado respalda su funcionamiento en los entornos evaluados; no acredita operación productiva ni ejecución en la computadora del estudiante.
+La aplicación de triaje financiero superó las verificaciones funcionales definidas para el prototipo: 30 pruebas automatizadas, 10 comprobaciones HTTP sobre el contenedor y un recorrido de interfaz en Chromium. La imagen se construyó y el contenedor alcanzó estado running y healthy en GitHub Actions. Las capturas incorporadas acreditan además la construcción y ejecución local en Windows y el despliegue público en Render. La comprobación HTTP de nube pasó diez casos y una consulta adicional de Swagger. El resultado respalda la demostración funcional; no acredita operación productiva.
 
 Este documento presenta las entradas evaluadas, los resultados esperados y observados, la trazabilidad de las evidencias y las limitaciones pendientes. Las excepciones de arranque y los rechazos HTTP se consideran resultados correctos cuando coinciden con el comportamiento esperado.
 
@@ -185,7 +185,7 @@ El workflow 41374877919 concluyó con éxito. Construyó la imagen, inició Dock
 
 Los tiempos pertenecen a dos consultas individuales registradas en container-http.json. No son promedios, percentiles ni pruebas bajo carga y no sustentan un SLA. El tiempo HTTP incorpora comunicación y procesamiento; latency_ms corresponde al intervalo medido dentro del endpoint.
 
-La ejecución se realizó en el runner remoto de GitHub Actions. No se presenta como una ejecución ya realizada en la laptop del estudiante ni como un servicio público de nube desplegado. La configuración PaaS y el manual preparan una etapa posterior.
+Los valores de esta sección corresponden al runner de GitHub Actions. Las capturas del estudiante acreditan adicionalmente Docker en Windows y el servicio público en Render. Sus resultados y la comprobación remota se presentan en la sección 10; cada entorno conserva su propia evidencia.
 
 ## 8 Conclusiones y seguimiento
 
@@ -195,10 +195,10 @@ La reproducción de la matriz y las métricas de actividad 6 confirma continuida
 
 | Pendiente | Acción y evidencia necesaria |
 | --- | --- |
-| Ejecución en la laptop | Aplicar el manual; conservar build, docker ps, salud y respuestas HTTP de ese equipo. |
+| Ejecución local y nube | Completadas para demostración: capturas de Docker en Windows y Render Live. Conservar las evidencias y repetir tras cambios de código. |
 | Límites y robustez adicionales | Probar exactamente 4,000 caracteres, Unicode diverso, varias intenciones, tiempos de espera y fallos de red. |
 | Rendimiento y seguridad | Medir concurrencia, memoria, p95 y recuperación; revisar autenticación y controles para un piloto real. |
-| Validez externa y nube | Etiquetar tickets externos en español y separar por cliente o periodo; probar el despliegue PaaS cuando se ejecute. |
+| Validez externa | Pendiente: etiquetar tickets externos en español y separar por cliente o periodo. El despliegue público ya está ejecutado. |
 
 ## 9 Evidencias y trazabilidad
 
@@ -213,3 +213,65 @@ Cuatecontzi Mendoza, E. (2026a). AI SupportAssist Fase 2 (Revisión f810851) [C�
 Cuatecontzi Mendoza, E. (2026b). Fase 2 API Docker e integración (Ejecución 41374877919) [Registro de pruebas]. GitHub Actions. https://github.com/efrainkun-ai/Act5_GP/actions/runs/41374877919
 
 Bitext Innovations. (s. f.). Bitext customer support LLM chatbot training dataset (Revisión 430d1a8) [Conjunto de datos]. Hugging Face. https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset
+
+## 10 Ejecución local y despliegue público
+
+El archivo Captura de evitencias.docx contiene 13 imágenes revisadas. Ocho figuras seleccionadas se incluyen en los documentos Word entregados por separado; el repositorio conserva el inventario, SHA-256 y descripciones. Las figuras E03 a E08 se incorporan a este documento; E01 y E02 y la secuencia reproducible aparecen en el manual. Las capturas registran Windows, PowerShell, Docker Desktop, localhost y Render el 1 de noviembre de 2026. Los JSON técnicos remotos expresan fecha UTC.
+
+| Entorno | Evidencia observada |
+| --- | --- |
+| Windows local | Commit eba2c4fe6ecbda062e71d6d3f71f8b6a29f97685; imagen ai-supportassist:fase2, ID 7d109de9eb50. Docker informa 550 MB de disco y 127 MB de contenido. |
+| Contenedor local | fase2-supportassist-1 healthy; 127.0.0.1:8000 → 8000/tcp; /ready informa act6-nb-financial-v1. |
+| Interfaz local | Reembolso: ruta financiera y 99.74 %. Contraseña: otra ruta y 0.13 %. Umbral 0.24. |
+| Render público | Deploy succeeded y Live; revisión eba2c4f. La interfaz pública clasifica factura con puntuación 99.98 % e inferencia 1.82 ms en la captura. |
+
+URL comprobada: https://ai-supportassist-fase2.onrender.com. La captura de exportación acredita comandos ejecutados en PowerShell, pero no se recibieron los archivos JSON originales de ese equipo; no se sustituyen por resultados del runner ni se atribuyen las pruebas remotas a la laptop.
+
+### 10 1 Comprobación remota de la API pública
+
+Registro: evidence/render/cloud-http.json; fecha UTC 2026-11-02T04:14:40.574108+00:00. Se ejecutaron las mismas diez solicitudes del smoke contra HTTPS. Los códigos y aserciones de las diez coincidieron con lo esperado; /docs se comprobó adicionalmente y devolvió HTTP 200 con HTML Swagger.
+
+| Caso público | Esperado y observado |
+| --- | --- |
+| Seis GET de estado interfaz JavaScript contrato y modelo | 200 en las seis solicitudes. |
+| Where is my refund? | 200; clase 1; puntuación 99.74 %. |
+| I forgot my password | 200; clase 0; puntuación 0.13 %. |
+| Texto vacío e idioma declarado español | 422 en ambos casos; rechazo previsto. |
+
+Los registros incluyen request_id, versión, umbral y tiempos individuales. No son una evaluación bajo carga. La publicación del prototipo y las capturas prueban comunicación funcional de frontend, API y modelo; la validez predictiva continúa limitada al benchmark histórico en inglés sintético.
+
+## 11 Evidencia de Docker en Windows
+
+Figura E03 incluida en el documento Word entregado por separado.
+
+La salida final confirma Image ai-supportassist:fase2 Built; ID local 7d109de9eb50, 550 MB de uso en disco y 127 MB de contenido.
+
+Figura E04 incluida en el documento Word entregado por separado.
+
+Docker Compose informa healthy; publica 127.0.0.1:8000 y /ready devuelve ready con act6-nb-financial-v1.
+
+Los ID de imagen de CI y Windows corresponden a construcciones distintas. La imagen de Render se construyó desde GitHub y no se identifica con el ID local.
+
+## 12 Evidencia de integración local
+
+Figura E05 incluida en el documento Word entregado por separado.
+
+Where is my refund? produce atención financiera humana y puntuación 99.74 % con umbral 0.24.
+
+Figura E06 incluida en el documento Word entregado por separado.
+
+I forgot my password produce otra ruta de soporte y puntuación financiera 0.13 %.
+
+La decisión aplica la puntuación como número entre 0 y 1. El umbral 0.24 equivale a 24 %; ambas rutas mantienen revisión humana requerida.
+
+## 13 Evidencia del despliegue público
+
+Figura E07 incluida en el documento Word entregado por separado.
+
+Render muestra Deploy succeeded y Live, fuente eba2c4f y Uvicorn escuchando en 0.0.0.0:8000.
+
+Figura E08 incluida en el documento Word entregado por separado.
+
+La URL ai-supportassist-fase2.onrender.com procesa How can I get my invoice? y muestra atención financiera humana con 99.98 %.
+
+Fuente de las figuras: capturas proporcionadas por el estudiante. Se ajustó el encuadre para eliminar áreas ajenas al resultado. La aplicación desplegada conserva eba2c4f; esta actualización documental no cambia la implementación.
